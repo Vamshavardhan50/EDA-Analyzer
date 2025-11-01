@@ -1,13 +1,15 @@
-```markdown
-# EDA-Analyzer
+````markdown
+# 📊 EDA-Analyzer
 
-An interactive Exploratory Data Analysis (EDA) web application built with Streamlit that helps you quickly understand and visualize your dataset without writing any code.
+An interactive Exploratory Data Analysis (EDA) app built with **Streamlit** to help you quickly understand and visualize datasets — without writing a single line of code.
 
-[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/streamlit-%3E%3D0.80-orange)](https://streamlit.io/)
-[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![Streamlit](https://img.shields.io/badge/streamlit-%3E%3D0.80-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-Table of Contents
+---
+
+## 📘 Table of Contents
 - [About](#about)
 - [Features](#features)
 - [Demo](#demo)
@@ -22,135 +24,155 @@ Table of Contents
 - [License](#license)
 - [Contact](#contact)
 
-## About
-EDA-Analyzer is a lightweight Streamlit app that automates common exploratory data analysis tasks. Drop in your CSV (or other supported tabular files) and instantly get:
-- Data overview (shape, dtypes, missing values)
-- Summary statistics for numeric and categorical columns
-- Distribution plots, correlations, and scatter matrices
-- Missing value visualizations
-- Outlier detection summaries
-- Quick profiling and downloadable reports
+---
 
-It is intended for data scientists, analysts, and anyone who wants rapid insight into a dataset without writing code.
+## 📖 About
+**EDA-Analyzer** automates common Exploratory Data Analysis tasks.
 
-## Features
-- Upload CSV / Excel files and preview data
-- Automatic detection of numeric vs categorical features
-- Summary statistics (mean, median, std, quantiles)
-- Histograms, boxplots, bar charts, correlation heatmaps
-- Missing values matrix and counts
-- Pairplot / scatter matrix for selected columns
-- Downloadable cleaned/exported datasets and images
-- Simple, responsive Streamlit UI — usable locally or hosted
+Upload your dataset and instantly get:
 
-## Demo
-If you host a demo, link it here (replace with your URL):
-- Demo: https://your-demo-url.example
+- Dataset overview (shape, datatypes, missing values)
+- Summary statistics for numeric & categorical columns
+- Distribution & correlation visualizations
+- Outlier detection insights
+- Missing value report
+- Profiling report downloads
 
-## Quick Start
+Useful for **data scientists, analysts, students, and anyone exploring data**.
 
-Prerequisites
-- Python 3.8 or newer
+---
+
+## ✨ Features
+- Upload CSV / Excel datasets
+- Auto-detect numeric & categorical columns
+- Summary stats (mean, std, percentiles, frequencies)
+- Histograms / Boxplots / Bar Charts
+- Correlation heatmaps & pairplots
+- Missing value matrix & counts
+- Download cleaned data & plots
+- Simple & responsive Streamlit UI
+
+---
+
+## 🎬 Demo
+Add your hosted app link here:
+
+> 🔗 Demo: https://your-demo-url.example
+
+---
+
+## ⚡ Quick Start
+
+### Requirements
+- Python 3.8+
 - pip
 
-Clone the repository:
+### Installation
 ```bash
 git clone https://github.com/Vamshavardhan50/EDA-Analyzer.git
 cd EDA-Analyzer
-```
+````
 
-Create and activate a virtual environment (recommended):
+Create & activate virtual environment:
+
 ```bash
 python -m venv .venv
 # macOS / Linux
 source .venv/bin/activate
-# Windows (PowerShell)
+# Windows
 .venv\Scripts\Activate.ps1
 ```
 
 Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 Run the app:
+
 ```bash
 streamlit run app.py
 ```
 
-Open http://localhost:8501 in your browser.
+Open: [http://localhost:8501](http://localhost:8501)
 
-## Usage
+---
 
-1. Start the app (see Quick Start).
-2. Upload a CSV or Excel file using the file uploader in the sidebar.
-3. Choose options:
-   - Select columns to analyze
-   - Toggle plots (histogram, boxplot, correlation)
-   - Set sampling / row limit for large datasets
-4. View generated statistics and visualizations.
-5. Download cleaned / exported data or save plots.
+## 🧠 Usage
 
-Tips:
-- For large datasets, enable sampling to keep the UI responsive.
-- Use the column selector to focus on a subset of features for pairplots.
+1. Run the app
+2. Upload CSV / Excel file
+3. Select columns & plots
+4. View analysis, charts, and insights
+5. Download processed data & charts
 
-## Configuration
+💡 Tip: Enable sampling for very large datasets.
 
-Environment variables (optional)
-- STREAMLIT_SERVER_PORT — port for Streamlit (defaults to 8501)
-- SAMPLE_ROWS — default row-sample used in the UI for large datasets
+---
 
-Config file
-- If you add a config.yml or .env, document it here.
+## ⚙️ Configuration
 
-## Development
+### Optional environment variables
 
-Project layout (example)
-- app.py — main Streamlit app
-- src/ — helper modules and utilities
-- requirements.txt — Python deps
-- assets/ — static images or resources
-- tests/ — unit/integration tests
+| Variable                | Description         | Default |
+| ----------------------- | ------------------- | ------- |
+| `STREAMLIT_SERVER_PORT` | Port                | `8501`  |
+| `SAMPLE_ROWS`           | Default sample size | none    |
 
-Run the app in dev mode:
+---
+
+## 🛠️ Development
+
+Project structure:
+
+```
+app.py
+src/
+assets/
+tests/
+requirements.txt
+```
+
+Run in dev mode:
+
 ```bash
 streamlit run app.py
 ```
 
-Add linting and formatting:
+Code style:
+
 ```bash
-# install black and flake8 if not already present
 pip install black flake8
 black .
 flake8
 ```
 
-Code style
-- Follow PEP8 and use type hints where helpful.
-- Keep Streamlit UI code in app.py or a dedicated UI module; keep heavy logic in src/ modules for testability.
+---
 
-## Testing
+## ✅ Testing
 
-If tests are present:
 ```bash
 pytest -q
 ```
 
-Write tests for:
-- Data parsing / loading
-- Column type detection
-- Summary statistics functions
-- Visualization helper outputs (shapes, returned objects)
+Recommended tests:
 
-## Deployment
+* Data loading
+* Type detection
+* Summary statistics
+* Visualization helper outputs
 
-Deploy on any platform that supports Python apps. Common options:
-- Streamlit Community Cloud — simple push and connect
-- Heroku / Railway / Render — containerize or run via Procfile
-- Docker — build an image and run
+---
 
-Example Dockerfile snippet:
+## ☁️ Deployment Options
+
+* Streamlit Cloud
+* Heroku / Railway / Render
+* Docker
+
+### Dockerfile example
+
 ```dockerfile
 FROM python:3.10-slim
 WORKDIR /app
@@ -160,24 +182,50 @@ EXPOSE 8501
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
 ```
 
-## Contributing
-Contributions are welcome! See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+---
 
-## Roadmap
-- Add support for more file formats (Parquet)
-- Caching and performance improvements
-- Authentication for shared deployments
-- Export to PDF report generation
+## 🤝 Contributing
 
-## License
-This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
+PRs are welcome!
+Add a `CONTRIBUTING.md` for contribution guidelines.
 
-## Contact
-Maintainer: Vamshavardhan50  
-GitHub: https://github.com/Vamshavardhan50
+---
 
-If you want, I can:
-- Create a CONTRIBUTING.md (included here)
-- Add GitHub Action templates for CI
-- Open a PR that adds these files to the repo
+## 🚧 Roadmap
+
+* Parquet file support
+* Caching performance improvements
+* Authentication for shared deployments
+* Export full PDF report
+
+---
+
+## 📄 License
+
+MIT License — see the `LICENSE` file.
+
+---
+
+## 👤 Contact
+
+Maintainer: **Vamshavardhan50**
+GitHub: [https://github.com/Vamshavardhan50](https://github.com/Vamshavardhan50)
+
+---
+
+```
+
+---
+
+### 🎁 Bonus (Optional)
+Would you like me to also generate:
+
+✅ `CONTRIBUTING.md`  
+✅ GitHub Actions CI workflow  
+✅ Issue & PR templates  
+✅ Screenshots section for README  
+✅ Badges (build status, stars, forks, etc.)
+
+Reply with:  
+**"yes, generate extra files"** 🚀
 ```
